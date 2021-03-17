@@ -17,13 +17,13 @@ class bookoverviewscreen extends StatelessWidget {
         title: 'ارض زيكولاا',
         det: 'test',
         imageUrl:
-        'https://s3.amazonaws.com/jarir-files/images/original/6114.jpg'),
+            'https://s3.amazonaws.com/jarir-files/images/original/6114.jpg'),
     Book(
         id: '1',
         title: 'ارض زيكولاا',
         det: 'test',
         imageUrl:
-        'https://s3.amazonaws.com/jarir-files/images/original/6114.jpg')
+            'https://s3.amazonaws.com/jarir-files/images/original/6114.jpg')
   ];
   @override
   Widget build(BuildContext context) {
@@ -37,10 +37,10 @@ class bookoverviewscreen extends StatelessWidget {
         itemBuilder: (ctx, i) => BookItem(
             listofBook[i].id, listofBook[i].title, listofBook[i].imageUrl),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 3 / 2,
-            mainAxisSpacing: 10,
-            crossAxisSpacing: 10),
+            crossAxisCount: 3,
+            childAspectRatio: 2 / 3,
+            mainAxisSpacing: 20,
+            crossAxisSpacing: 20),
       ),
     );
   }

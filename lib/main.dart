@@ -1,7 +1,11 @@
 import 'package:fashion/maindrawer.dart';
+import 'package:fashion/models/Book.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'maindrawer.dart';
 import 'screens/book_overview_screen.dart';
+import 'screens/book_details_screen.dart';
+import 'providers/books.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,13 +13,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
+    return ChangeNotifierProvider(
+        builder: (ctx)=> Books(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.deepPurple,
+          accentColor: Colors.black26
+        ),
+        home: bookoverviewscreen(),
+        routes: {
+          Book_details_screen.routeName:(ctx)=>Book_details_screen(),
+        },
 
-        primarySwatch: Colors.blue,
       ),
-      home: bookoverviewscreen()
     );
   }
 }
